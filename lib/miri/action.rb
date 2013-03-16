@@ -1,6 +1,6 @@
 #require_relative 'action/echonest'
 require_relative 'action/spotify'
-require_relative 'action/spotify1'
+#require_relative 'action/spotify1'
 #require_relative 'action/songkick'
 require_relative 'action/wolframalpha'
 #require_relative 'action/playyt'
@@ -15,6 +15,7 @@ module Miri
 
       def process
         action_class = find_action_class
+        Miri::TextToSpeech.say("Searching...")
         if action_class
           action_text = action_text_exists_in_action_text(action_class.keywords)
 
@@ -66,7 +67,6 @@ module Miri
       def all_action_classes
         @action_classes ||= [ Miri::Action::Grooveshark.new,
                               Miri::Action::Spotify.new,
-                              Miri::Action::Spotify1.new,
                               Miri::Action::WolframAlpha.new]
       end
 

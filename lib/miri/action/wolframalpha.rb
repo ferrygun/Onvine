@@ -12,7 +12,11 @@ module Miri
       def process(artist_text)
         @search_text = artist_text
         result = perform_query
-        Miri::TextToSpeech.say(result)
+        if result == ""
+          Miri::TextToSpeech.say("I am sorry I don't know the answer. Please say it again")
+	else 
+          Miri::TextToSpeech.say(result)
+       end
       end
 
       def keywords

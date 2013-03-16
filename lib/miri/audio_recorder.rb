@@ -5,7 +5,7 @@ module Miri
     
     def record(record_duration=RECORD_DURATION)
       # Record the audio
-      `arecord -q -d #{record_duration} -D plughw:1,0 -f cd -c 1 -r #{RECORD_SAMPLE_RATE} #{SOUNDS_OUTPUT_DIR}/output.wav &> /dev/null`
+      `arecord -q -d #{record_duration} -D plughw:1,0 -f S16_LE -c 1 -r #{RECORD_SAMPLE_RATE} #{SOUNDS_OUTPUT_DIR}/output.wav &> /dev/null`
 
       # Convert the recorded audio from wav to flac
       `ffmpeg -loglevel 0 -v 0 -i #{SOUNDS_OUTPUT_DIR}/output.wav -ab 192k -y #{SOUNDS_OUTPUT_DIR}/output.flac 2> /dev/null`

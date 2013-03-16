@@ -31,8 +31,9 @@ module Miri
 
       if speech_to_text.confidence > MIN_SPEECH_TO_TEXT_CONFIDENCE
         Logger.info("I heard '#{speech_to_text.text}'")
+        Miri::TextToSpeech.say("I heard '#{speech_to_text.text}'")
       else
-        Miri::TextToSpeech.say("I'm sorry, I couldn't hear that.")
+        Miri::TextToSpeech.say("I'm sorry, I couldn't hear you")
         translated_text = ""
       end
 

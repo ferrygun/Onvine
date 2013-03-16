@@ -2,7 +2,7 @@ module Miri
   module TextToSpeech
 
     TEXT_CHUNK_SIZE=98    
-    TRANSLATION_URI="http://translate.google.com/translate_tts?tl=en&q="
+    TRANSLATION_URI="http://translate.google.com.mx/translate_tts?tl=en&q="
 
     def self.say(message)
       @message = message
@@ -33,7 +33,7 @@ module Miri
       else
         Logger.debug("Playing directly with Mplayer")
         Logger.debug("Chunked message: #{chunked_message[0]}")
-        `mplayer -ao alsa:device=hw=0.0 -noconsolecontrols \"http://translate.google.com/translate_tts?tl=en&q=#{chunked_message[0]}\" > /dev/null 2>&1`
+        `mplayer -ao alsa:device=hw=0.0 -noconsolecontrols \"http://translate.google.com.mx/translate_tts?tl=en&q=#{chunked_message[0]}\" > /dev/null 2>&1`
       end
     end
 
