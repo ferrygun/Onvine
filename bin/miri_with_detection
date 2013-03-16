@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-NOISE_SAMPLE_RATE = 0.02
+NOISE_SAMPLE_RATE = 0.0017
 RECORD_RATE_SECONDS = 1
 
 while true
