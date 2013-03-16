@@ -9,7 +9,7 @@ module Miri
 
       # Convert the recorded audio from wav to flac
       `ffmpeg -loglevel 0 -v 0 -i #{SOUNDS_OUTPUT_DIR}/output.wav -ab 192k -y #{SOUNDS_OUTPUT_DIR}/output.flac 2> /dev/null`
-
+      
       return "#{SOUNDS_OUTPUT_DIR}/output.flac"
     end
   end

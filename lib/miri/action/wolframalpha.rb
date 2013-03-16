@@ -2,6 +2,7 @@ require_relative 'base_action'
 require 'net/http'
 require 'json'
 require 'nokogiri'
+require "duck_duck_go"
 
 module Miri
   module Action
@@ -12,11 +13,14 @@ module Miri
       def process(artist_text)
         @search_text = artist_text
         result = perform_query
-        if result == ""
-          Miri::TextToSpeech.say("I am sorry I don't know the answer. Please say it again")
-	else 
-          Miri::TextToSpeech.say(result)
-       end
+        Miri::TextToSpeech.say(result)
+
+        if result != ""
+		 result = `/home/pi/miri/bin/duckduckgorb  "#{@search_text}"`
+        	Miri::TextToSpeech.say(result)
+	else
+	 	Miri::TextToSpeech.say("I am sorry, I don't know the answer")
+        end
       end
 
       def keywords

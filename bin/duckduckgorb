@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+
+require "duck_duck_go"
+
+ddg = DuckDuckGo.new
+zci = ddg.zeroclickinfo(ARGV[0]) # ZeroClickInfo object
+print zci.abstract_text
