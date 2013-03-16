@@ -29,7 +29,7 @@ module Miri
 
         begin
           xml_doc  = Nokogiri::XML(response.body)
-          result = xml_doc.xpath("//queryresult/pod[1]/subpod/plaintext/text()").text
+          result = xml_doc.xpath("//queryresult/pod[1]/subpod/plaintext/text()").text +  xml_doc.xpath("//queryresult/pod[2]/subpod/plaintext/text()").text
           Logger.debug("Result is: #{result}")
         rescue Exception => e
           Logger.error("An error occurred querying WolframAlpha.")

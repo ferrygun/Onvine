@@ -13,7 +13,8 @@ module Miri
      def process(artist_text)
         @artist_text = artist_text
         Logger.debug("In Grooveshark process with #{@artist_text}")
-        url = perform_query
+        
+	url = perform_query
 
         command = "mpg123 #{url} < /dev/null &"
         if command == ""
