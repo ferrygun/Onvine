@@ -11,7 +11,7 @@ import time
 def listen_for_speech():
     """
 Does speech recognition using Google's speech recognition service.
-Records sound from microphone until silence is found and save it as WAV and then converts it to FLAC. Finally, the file is sent to Google and the result is returned.
+	Records sound from microphone until silence is found and save it as WAV and then converts it to FLAC. Finally, the file is sent to Google and the result is returned.
 """
 
     #config
