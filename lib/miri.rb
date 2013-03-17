@@ -3,7 +3,7 @@ require_relative 'miri/app_config'
 module Miri
   ROOT = File.expand_path('..', __FILE__)
   require ROOT + '/miri/logger'
-  require ROOT + '/miri/audio_recorder'
+  require ROOT + '/miri/audio_recorder1'
   require ROOT + '/miri/audio_player'
   require ROOT + '/miri/speech_to_text' 	
   require ROOT + '/miri/text_to_speech' 	
@@ -17,8 +17,8 @@ module Miri
   class Agent
     def capture_audio
       Logger.info("Start talking")
-      Miri::AudioPlayer.play("miri_start.mp3")
-      audio_recorder = Miri::AudioRecorder.new()
+      #Miri::AudioPlayer.play("miri_start.mp3")
+      audio_recorder = Miri::AudioRecorder1.new()
       audio_file = audio_recorder.record
       Logger.info("Stop talking")
       Miri::AudioPlayer.play("miri_end.mp3")
