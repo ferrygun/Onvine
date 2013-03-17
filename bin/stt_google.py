@@ -18,7 +18,7 @@ Records sound from microphone until silence is found and save it as WAV and then
     chunk = 512
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
-    RATE = 44100
+    RATE = 48000
     THRESHOLD = 180 #The threshold intensity that defines silence signal (lower than).
     SILENCE_LIMIT = 2 #Silence limit in seconds. The max ammount of seconds where only silence is recorded. When this time passes the recording finishes and the file is delivered.
 
