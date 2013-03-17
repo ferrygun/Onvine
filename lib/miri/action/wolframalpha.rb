@@ -19,7 +19,7 @@ module Miri
 		 result = `/home/pi/miri/bin/duckduckgorb  "#{@search_text}"`
         	Miri::TextToSpeech.say(result)
 	else
-	 	Miri::TextToSpeech.say("I am sorry, I don't know the answer")
+	 	Miri::TextToSpeech.say("I am sorry, I couldn't find the answer")
         end
       end
 
